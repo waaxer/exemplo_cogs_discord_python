@@ -5,10 +5,10 @@ from discord.ext import commands
 class nome_classe_comando(commands.Cog):
     def __init__(self, bot: commands.Bot):
         self.bot = bot
+        self.cog = __class__.__name__
 
-    @commands.Cog.listener()
-    async def on_ready(self):
-        print('Comando carregado.')
+    def cog_load(self):
+        print(f"Cog: {self.cog} foi carregada!")
 
     @app_commands.command(name="teste", description="teste")
     @app_commands.describe()
