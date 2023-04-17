@@ -1,12 +1,15 @@
 **Exemplo de uso de cogs no Discord.py**
+
 Este repositório contém exemplos de como utilizar os cogs no Discord.py.
 
 **Instalação**
+
 Antes de usar os exemplos, é necessário instalar o Discord.py. Você pode fazer isso utilizando o pip:
 
 ```pip install discord.py```
 
 **Utilização**
+
 O repositório possui um exemplo de uso de cogs:
 
 **Passos:**
