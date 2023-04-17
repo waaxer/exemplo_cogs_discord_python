@@ -9,7 +9,15 @@ Antes de usar os exemplos, é necessário instalar o Discord.py. Você pode faze
 Utilização
 O repositório possui um exemplo de uso de cogs:
 
-O primeiro exemplo mostra como criar um cog simples que responde a um comando. Para executá-lo, basta rodar o seguinte comando:
+Passos:
+
+1. Crie um arquivo `.env` na pasta raíz do seu projeto com os seguintes campos:
+```
+BOT_SECRET = token_do_bot
+BOT_ID = id_do_bot
+```
+
+2. Após isso você pode executar o bot
 
 ```python main.py```
 
