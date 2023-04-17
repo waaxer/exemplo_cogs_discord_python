@@ -25,7 +25,9 @@ BOT_ID = id_do_bot
 ```python main.py```
 
 **Contribuição**
+
 Sinta-se livre para contribuir com novos exemplos de uso de cogs no Discord.py. Basta criar um fork deste repositório, fazer as modificações necessárias e submeter um pull request.
 
 **Licença**
+
 Este repositório é distribuído sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
