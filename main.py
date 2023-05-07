@@ -2,8 +2,11 @@ import discord
 import asyncio
 from discord.ext import commands
 import os
+import pathlib
+import sys
 from dotenv import load_dotenv
 
+sys.dont_write_bytecode = True
 load_dotenv()
 
 intents = discord.Intents.all()
@@ -21,12 +24,17 @@ async def on_ready():
         print(f"Erro ao sincronizar comandos: {erro}")     
 
 async def load():
-    for filename in os.listdir('./commands'):
-        if filename.endswith('.py'):
-            await bot.load_extension(f'commands.{filename[:-3]}')
-    for filename in os.listdir('./events'):
-        if filename.endswith('.py'):
-            await bot.load_extension(f'events.{filename[:-3]}')
+    path = pathlib.Path("./commands")
+    for file in path.glob("**/*.py"):
+        if file.is_file():
+            extension = ".".join(file.parts)[:-3]
+            await bot.load_extension(extension.replace("/", "."))
+
+    path = pathlib.Path("./events")
+    for file in path.glob("**/*.py"):
+        if file.is_file():
+            extension = ".".join(file.parts)[:-3]
+            await bot.load_extension(extension.replace("/", "."))
 
 async def main():
     await load()
